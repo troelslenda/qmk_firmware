@@ -1,6 +1,6 @@
 # MCU name
 MCU = atmega328p
-BOOTLOADER = USBasp
+BOOTLOADER = usbasploader
 
 BOOTMAGIC_ENABLE = yes
 MOUSEKEY_ENABLE = no
