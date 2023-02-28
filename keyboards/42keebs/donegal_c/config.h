@@ -21,11 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
-#define VENDOR_ID       0x8968
-#define PRODUCT_ID      0x4748
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    "42.Keebs"
-#define PRODUCT         "Donegal-C"
+#define TAPPING_TERM 175
+#define TAPPING_TERM_PER_KEY
 
 /* key matrix size */
 #define MATRIX_ROWS 9
