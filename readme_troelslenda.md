@@ -4,10 +4,10 @@ This fork of qmk_firmware contains modified code from from [msvisser/qmk_firmwar
 
 ## My keyboards
 
-- [Anne pro (retired)](keyboards/anne_pro/keymaps/troels)
-- [Anne pro 2](keyboards/annepro2/keymaps/troels)
-- [Donegal-C](keyboards/42keebs/donegal_c/keymaps/trogels/)
-- [Corne (crkbd)](keyboards/crkbd/keymaps/troels/)
+- [Anne pro (retired)](/keyboards/anne_pro/keymaps/troels)
+- [Anne pro 2](/keyboards/annepro2/keymaps/troels)
+- [Donegal-C](/keyboards/42keebs/donegal_c/keymaps/trogels/)
+- [Corne (crkbd)](/keyboards/crkbd/keymaps/troels/)
 
 
 ## ↓ Official readme.md ↓
