@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#include "config_common.h"
+//#include "config_common.h"
 
 #define TAPPING_TERM 175
 #define TAPPING_TERM_PER_KEY
@@ -27,6 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* key matrix size */
 #define MATRIX_ROWS 9
 #define MATRIX_COLS 8
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
 /*
  * Keyboard Matrix Assignments
@@ -44,15 +46,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COL_PINS { D0, D1, D4, B5, C3, C2, C1, C0 }
 
 /* COL2ROW, ROW2COL*/
-#define DIODE_DIRECTION COL2ROW
 
 //#define NO_UART 1
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 5
 
 /* Bootmagic Lite key configuration */
 #define BOOTMAGIC_LITE_ROW 0
 #define BOOTMAGIC_LITE_COLUMN 0
 
-#define WAIT_FOR_USB
+//#define WAIT_FOR_USB
+
+#define NO_USB_STARTUP_CHECK

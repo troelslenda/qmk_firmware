@@ -14,16 +14,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "donegal_c.h"
 #include <stdio.h>
+#include "quantum.h"
 
 //
 //#if (__has_include("secrets.h") && !defined(NO_SECRETS))
 //#include "secrets.h"
 //#endif
-
-
-
 
 // tap dance declarations
 enum tap_dance { _TD_ESC, _TD_LCTRL, _TD_RCTRL };
@@ -95,7 +92,7 @@ switch(active_mode) {
             oled_write_ln_P(PSTR("assembled by trogels"), false);
         }
         if (timer_elapsed32(oled_sleep_timer) < 6000 && timer_elapsed32(oled_sleep_timer) > 3000) {
-             oled_write_ln_P(PSTR("         powered by"), false);
+             oled_write_ln_P(PSTR("         pawered by"), false);
              render_logo();
         }
         if(timer_elapsed32(oled_sleep_timer) > 6000) {
@@ -104,27 +101,19 @@ switch(active_mode) {
         }
         break;
     case DEFAULT:
-        if (IS_LAYER_ON(_BASE) && !IS_LAYER_ON(_FN1) && !IS_LAYER_ON(_FN2)) {
+        if (IS_LAYER_ON(0) && !IS_LAYER_ON(1) && !IS_LAYER_ON(2)) {
             oled_write_ln_P(PSTR("      Default      1"), false);
         }
-        if (IS_LAYER_ON(_MACOS) && !IS_LAYER_ON(_FN1) && !IS_LAYER_ON(_FN2)) {
+        if (IS_LAYER_ON(3) && !IS_LAYER_ON(1) && !IS_LAYER_ON(2)) {
             oled_write_ln_P(PSTR("       MACOS       2"), false);
         }
-        if (IS_LAYER_ON(_DAYZ) && !IS_LAYER_ON(_FN1) && !IS_LAYER_ON(_FN2)) {
+        if (IS_LAYER_ON(4) && !IS_LAYER_ON(1) && !IS_LAYER_ON(2)) {
             oled_write_ln_P(PSTR("        DayZ       3"), false);
         }
-        if (IS_LAYER_ON(_FN1) && !IS_LAYER_ON(_FN2)) {
+        if (IS_LAYER_ON(1) && !IS_LAYER_ON(2)) {
             oled_write_ln_P(PSTR("        Lift        "), false);
         }
-        if (IS_LAYER_ON(_FN2)) {
-
-//            char buf[256];
-//            char dest[100];
-//
-//            sprintf(buf, "Oneshot L: %s %s %s", IS_LAYER_ON(_BASE) ? "[1]" : "1", IS_LAYER_ON(_MACOS) ? "[2]" : "2", IS_LAYER_ON(_DAYZ) ? "[3]" : "3");
-//
-//            oled_write_ln_P(PSTR(buf), false);
-//            oled_write_ln_P(PSTR("      "), false);
+        if (IS_LAYER_ON(2)) {
             oled_write_ln_P(PSTR("   ONESHOT   "), false);
         }
 
@@ -152,16 +141,16 @@ switch(active_mode) {
 //https://github.com/qmk/qmk_firmware/blob/master/users/drashna/keyrecords/secrets.md
 
 // Tap Dance Definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
     [_TD_ESC]   = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_GRV),
     [_TD_LCTRL] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, KC_BTN4),
     [_TD_RCTRL] = ACTION_TAP_DANCE_DOUBLE(KC_RCTL, KC_BTN5)};
 
 
-__attribute__ ((weak))
-bool process_record_secrets(uint16_t keycode, keyrecord_t *record) {
-  return true;
-}
+// __attribute__ ((weak))
+// bool process_record_secrets(uint16_t keycode, keyrecord_t *record) {
+//   return true;
+// }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
