@@ -8,6 +8,7 @@ This fork of qmk_firmware contains modified code from from [msvisser/qmk_firmwar
 - [Anne pro 2](/keyboards/annepro2/keymaps/troels)
 - [Donegal-C](/keyboards/42keebs/donegal_c/keymaps/trogels/)
 - [Corne (crkbd)](/keyboards/crkbd/keymaps/troels/)
+- [DZ60v2](/keyboards/dztech/dz60v2/keymaps/trogels)
 
 
 ## ↓ Official readme.md ↓
